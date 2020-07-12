@@ -11,10 +11,10 @@ echo $status_code
 if test $status_code == 200
 then 
  echo "Working Fine"
- exit 1
+ exit 0
 else
  echo " $status_code ERROR" 
- exit 0
+ exit 1
 fi
 fi
 done
