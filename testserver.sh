@@ -5,12 +5,11 @@ do
 echo $podi
 status_code=$(curl -s -o /dev/null -w "%{http_code}" 192.168.99.102:$podi)
 echo $status_code
-if '$status_code == 200'
+if test $status_code == 200
 then 
  echo "Working fine"
- exit 1
 else
  echo " $status_code ERROR" 
- exit 0
+ echo  "In Pod which nodeport is $podi"
 fi
 done
