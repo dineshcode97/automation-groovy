@@ -4,7 +4,7 @@ for podi in $PODIP
 do
 status_code=$(curl -s -o /dev/null -w "%{http_code}" 192.168.99.102:$podi)
 echo $status_code
-if $status_code == 200
+if '$status_code == 200'
 then 
  echo "Working fine"
  exit 1
