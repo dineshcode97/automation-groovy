@@ -12,8 +12,8 @@ fi
 else
 echo "No files so no nedd for set up"
 fi
-POD=$( kubectl get pods -l app=webserver -o jsonpath="{.items[0].metadata.name}")
-kubectl cp /task6data/index.html $POD:/usr/local/apache2/htdocs/
+POD=$(kubectl get pods -l app=webserver -o jsonpath="{.items[0].metadata.name}")
+kubectl cp *.html $POD:/usr/local/apache2/htdocs/
 
 if ls * | grep php
 then 
@@ -27,4 +27,4 @@ else
 echo "No files so no nedd for set up"
 fi
 POD=$(kubectl get pods -l app=php -o jsonpath="{.items[0].metadata.name}")
-kubectl cp /task6data/index.php $POD:/var/www/html
+kubectl cp *.php $POD:/var/www/html
