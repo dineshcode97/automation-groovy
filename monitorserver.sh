@@ -1,5 +1,5 @@
-htmlfiles= ls /task3data/ | grep .html | wc -l
-phpfiles=  ls /task3data/ | grep .php | wc -l
+htmlfiles= ls /task6data/ | grep .html | wc -l
+phpfiles=  ls /task6data/ | grep .php | wc -l
 cd /task6data/
 if $htmlfiles > 0
 then 
