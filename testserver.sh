@@ -11,5 +11,5 @@ then
 else
  echo " $status_code ERROR" 
  echo  "In Pod which nodeport is $podi"
+ exit 0
 fi
-done
