@@ -1,7 +1,7 @@
-htmlfiles= ls /task6data/ | grep .html | wc -l
-phpfiles=  ls /task6data/ | grep .php | wc -l
-cd /task6data/
-if $htmlfiles > 0
+#htmlfiles= ls /task6data/ | grep .html | wc -l
+#phpfiles=  ls /task6data/ | grep .php | wc -l
+cd /root/task6data/
+if ls * | grep html
 then 
 if kubectl get deployment | grep webserver
 then
@@ -15,7 +15,7 @@ fi
 POD=$( kubectl get pods -l app=webserver -o jsonpath="{.items[0].metadata.name}")
 kubectl cp /task6data/index.html $POD:/usr/local/apache2/htdocs/
 
-if $phpfiles > 0
+if ls * | grep php
 then 
 if  kubectl get deployment | grep php
 then
