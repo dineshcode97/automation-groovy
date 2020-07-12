@@ -1,8 +1,8 @@
-export pod_ip=$(kubectl get svc -o jsonpath='{.items[*].spec.ports[*].nodePort}')
-echo $pod_ip
-export status_code=$(curl -s -o /dev/null -w "%{http_code}" 192.168.99.102:$pod_ip)
+ip=$(kubectl get svc -o jsonpath='{.items[*].spec.ports[*].nodePort}')
+echo $ip
+status_code=$(curl -s -o /dev/null -w "%{http_code}" 192.168.99.102:$ip)
 echo $status_code
-if test $status_code -eq 200
+if test $status_code == 200
 then 
  echo "Working Fine"
  exit 1
